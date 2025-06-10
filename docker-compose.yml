@@ -1,0 +1,8 @@
+version: '3'
+services:
+  ct-simple-app:
+    image: ${{ secrets.VPS_USERNAME }}/simple-app-ci-cd:01
+    ports:
+      - "9080:80"
+    restart: always
+    
