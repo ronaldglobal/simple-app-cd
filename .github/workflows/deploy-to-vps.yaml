@@ -30,7 +30,8 @@ jobs:
           key: ${{ secrets.VPS_PRIVATE_KEY }}
           script: |
             cd /home/${{ secrets.VPS_USERNAME }}/simple-app-ci-cd/
-            docker pull ${{ secrets.DOCKER_USERNAME }}/simple-app-ci-cd:01
+            docker pull ${{ secrets.DOCKER_USERNAME }}/simple-app-ci-cd:01 
+            docker-compose down
             docker-compose up -d
             # docker stop ct-simple-app
             # docker rm ct-simple-app
